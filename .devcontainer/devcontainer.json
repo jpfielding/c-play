@@ -11,6 +11,8 @@
   "customizations": {
     "vscode": {
       "extensions": [
+        "GitHub.copilot-chat",
+        "ms-vscode.cpptools-extension-pack"
       ]
     }
   },
