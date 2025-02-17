@@ -38,7 +38,7 @@
     {
       "type": "bind",
       "source": "${localEnv:HOME}/.bash_history_${localWorkspaceFolderBasename}",
-      "target": "/home/${localEnv:USER:prosight}/.bash_history"
+      "target": "/home/${localEnv:USER:play}/.bash_history"
     }
   ],
   "workspaceMount": "source=${localWorkspaceFolder},target=/workdir/${localWorkspaceFolderBasename},type=bind,consistency=cached", 
