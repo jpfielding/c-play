@@ -4,7 +4,7 @@ clean:
 
 Phony: build
 build: 
-	gcc -o a.out -Wall -save-temps main.c 
+	gcc -g -o a.out -Wall -save-temps main.c 
 
 Phony: run
 run:
