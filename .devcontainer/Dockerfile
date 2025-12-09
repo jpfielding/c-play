@@ -5,11 +5,15 @@ ARG USERNAME=play
 ARG USER_UID=1000
 ARG USER_GID=$USER_UID
 
+# Add ca certs so we can build the image on vpn
+COPY cas.pem /etc/pki/ca-trust/source/anchors/custom_cas.pem 
+RUN update-ca-trust
+
 RUN set -eux -o pipefail && \
     dnf install -y nss-tools openssl ca-certificates && \
     dnf install -y curl dnf-utils dnf-plugins-core epel-release findutils git git-lfs iproute jq ncurses rsync sudo tree which zsh && \
     dnf config-manager --set-enabled powertools && \ 
-    dnf install -y cmake gcc gcc-c++ glib2-devel procps-ng rpm-build 
+    dnf install -y cmake gcc gcc-c++ gdb glib2-devel procps-ng rpm-build 
 
 FROM base AS user
 
